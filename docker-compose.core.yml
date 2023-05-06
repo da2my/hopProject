@@ -1,0 +1,18 @@
+services:
+  app:
+    deploy:
+      resources:
+        limits:
+          memory: ${MEMORY_LIMIT_APP}
+
+  proxy:
+    image: nginx:1.21.3-alpine
+    deploy:
+      resources:
+        limits:
+          memory: ${MEMORY_LIMIT_PROXY}
+    depends_on:
+      app:
+        condition: service_started
+    volumes:
+      - "./proxy/conf.d:/etc/nginx/conf.d:ro"

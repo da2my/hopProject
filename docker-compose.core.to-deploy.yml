@@ -1,0 +1,9 @@
+services:
+  app:
+    image: 736523801992.dkr.ecr.eu-west-1.amazonaws.com/hop-tutorial:latest
+  proxy:
+    ports:
+      - mode: ingress
+        target: 80
+        published: 8081
+        protocol: tcp

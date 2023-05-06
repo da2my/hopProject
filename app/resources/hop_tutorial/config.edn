@@ -1,0 +1,36 @@
+{:duct.profile/base
+ {:duct.core/project-ns hop-tutorial
+
+  :duct.server.http/jetty {:handler #ig/ref :hop-tutorial.api/main}
+
+  :hop-tutorial.api/main {:routes [#ig/ref :hop-tutorial.static/root]
+                          :api-routes [#ig/ref :hop-tutorial.api/config]}
+
+  :hop-tutorial.api/config
+  {}
+
+  [:duct/const :hop-tutorial/common-config]
+  {:logger
+   #ig/ref :duct/logger}
+
+  :hop-tutorial.static/root
+  {}
+
+  :duct.compiler/sass
+  {:source-paths ["resources"] :output-path "target/resources"}}
+
+ :duct.profile/dev #duct/include "dev.edn"
+ :duct.profile/local #duct/include "local.edn"
+ :duct.profile/prod {}
+
+ :duct.module/logging {}
+ :duct.module.web/site {}
+
+ :dev.gethop.duct.module/cljs-compiler
+ {:environments
+  {:development
+   {:compiler :figwheel-main
+    :compiler-config
+    {:options
+     {:closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
+      :preloads [day8.re-frame-10x.preload]}}}}}}

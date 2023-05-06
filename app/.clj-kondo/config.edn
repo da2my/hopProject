@@ -1,0 +1,28 @@
+;; This Source Code Form is subject to the terms of the MIT license.
+;; If a copy of the MIT license was not distributed with this
+;; file, You can obtain one at https://opensource.org/licenses/MIT
+
+{:skip-comments
+ true
+
+ :linters
+ {:unsorted-required-namespaces
+  {:level :warning}
+
+  :unresolved-symbol
+  {:exclude [(hop-tutorial.api.util.responses/http-statuses)]}
+
+  :unresolved-var
+  {:exclude [hop-tutorial.api.util.responses]}
+
+  :refer-all
+  {:exclude #{clojure.test}}
+
+  :single-key-in
+  {:level :warning}
+
+  :used-underscored-binding
+  {:level :warning}
+
+  :redundant-fn-wrapper
+  {:level :warning}}}
