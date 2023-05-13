@@ -25,8 +25,9 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 RUN set -ex; \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-    imagemagick \
-    poppler-utils && \
+    libsodium23=1.0.18-1 libfreetype6=2.10.4+dfsg-1+deb11u1 \
+    fontconfig=2.13.1-4.2 poppler-utils=20.09.0-3.1+deb11u1 \
+    imagemagick=8:6.9.11.60+dfsg-1.3 && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
