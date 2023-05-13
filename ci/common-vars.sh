@@ -13,4 +13,4 @@ BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 DEPLOYMENT_BRANCH="main"
 
 # Docker repository in which the application image will be pushed
-DOCKER_IMAGE_REPOSITORY="736523801992.dkr.ecr.eu-west-1.amazonaws.com/hop-tutorial"
+DOCKER_IMAGE_REPOSITORY="736523801992.dkr.ecr.eu-west-2.amazonaws.com/hop-tutorial"
