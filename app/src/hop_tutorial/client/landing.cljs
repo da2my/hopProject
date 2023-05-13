@@ -10,7 +10,7 @@
    [:a {:href "https://www.gethop.dev/"
         :target "_blank"}
     [:img.landing__logo {:src "images/hop-logo.svg"}]]
-   [:h1.landing__title "Your application is up and running on AWS!!;)!!LOL"]])
+   [:h1.landing__title "Your application is up and running on AWS!!;)!!LOL!!!"]])
 
 (defmethod view/view-display ::view
   [_]
